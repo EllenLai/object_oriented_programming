@@ -26,6 +26,10 @@ end
 
 chris = Instructor.new("Chris")
 chris.greeting
+chris.teach
 
 christina = Student.new("Christina")
 christina.greeting
+christina.learn
+
+#the teach method cannot be called upon a student because it hasn't been told to. 
