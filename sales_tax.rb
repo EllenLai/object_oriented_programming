@@ -43,15 +43,15 @@ end
 
 
 item1 = ExemptGoods.new(1, "book", 12.49)
-item2 = Product.new(1, "music_cd", 16.49)
+item2 = Product.new(1, "music_cd", 14.99)
 item3 = ExemptGoods.new(1, "chocolate bar", 0.85)
-item4 = ImportExempt.new(1, "imported box of chocolates", 10.50)
-item5 = ImportGoods.new(1, "imported bottle of perfume", 54.65)
-item6 = ImportGoods.new(1, "imported bottle of perfume", 32.19)
-item7 = Product.new(1, "bottle of perfume", 20.89)
+item4 = ImportExempt.new(1, "imported box of chocolates", 10.00)
+item5 = ImportGoods.new(1, "imported bottle of perfume", 47.50)
+item6 = ImportGoods.new(1, "imported bottle of perfume", 27.99)
+item7 = Product.new(1, "bottle of perfume", 18.99)
 item8 = ExemptGoods.new(1, "packet of headache pills", 9.75)
-item9 = ExemptGoods.new(1, "imported box of chocolates", 11.85)
-# puts "#{item9.quantity} #{item9.name}: #{item9.price}"
+item9 = ExemptGoods.new(1, "imported box of chocolates", 11.25)
+
 
 input = [item1, item2, item3]
 input2 = [item4, item5]
@@ -63,10 +63,10 @@ def print_receipt(input)
 	end
 
 	totalTax = input.inject(0) {|x,y| x + y.calculate_sales_tax}
-		puts "Sales Tax: #{totalTax}"
+		puts "Sales Tax: #{(totalTax * 20).round/20.0}"
 
 	totalPrice = input.inject(0) {|x,y| x + y.calculate_total}
-		puts "Total: #{totalPrice}"
+		puts "Total: #{(totalPrice * 20).round/20.0}"
 	end
 
 puts "Output 1:"
